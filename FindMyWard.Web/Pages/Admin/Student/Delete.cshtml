@@ -1,0 +1,42 @@
+﻿@page
+@model FindMyWard.Web.Pages.Admin.Student.DeleteModel
+@{
+}
+<form method="post">
+<legend>Student Information<br />
+@Model.StudentInfo.User.NormalizedUserName
+</legend>
+    <fieldset>
+        <input type="hidden" asp-for="StudentInfo.Id" />
+        <div class="form-group">
+            <label asp-for="StudentInfo.MatricNumber" class="control-label"></label>
+            <input disabled asp-for="StudentInfo.MatricNumber" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label  disabled asp-for="StudentInfo.Name" class="control-label"></label>
+            <input disabled asp-for="StudentInfo.Name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="StudentInfo.Location" class="control-label"></label>
+            <input disabled asp-for="StudentInfo.Location" class="form-control" />
+        </div>
+    </fieldset>
+    <fieldset>
+        @if(Model.StudentInfo.Wards != null)
+        {
+            <div class="form-group">
+                <legend>These are the contacts to be notified:</legend>
+                @foreach (var item in Model.StudentInfo.Wards)
+                {
+                    <div class="form-group pt-2">
+                        <label asp-for="@item.PhoneNumber" class="control-label"></label>
+                        <input  disabled asp-for="@item.PhoneNumber" class="form-control" />
+                        <label asp-for="@item.Email" class="control-label"></label>
+                        <input  disabled asp-for="@item.Email" class="form-control" />
+                    </div>
+                }
+            </div>
+        }
+    </fieldset>
+    <input type="submit" class="btn btn-danger" value="Delete" />
+    </form>

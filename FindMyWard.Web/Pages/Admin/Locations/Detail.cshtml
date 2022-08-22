@@ -1,0 +1,68 @@
+﻿@page
+@model FindMyWard.Web.Pages.Admin.Locations.DetailModel
+@using FindMyWard.Utility;
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div class="row">
+            <legend>View Location</legend>
+            <div class="justify-content-end">
+                <a class="btn btn-primary" asp-page="Edit" asp-route-id="@Model.Location.Id">Edit</a>
+            </div>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="Location.Name" class="control-label"></label>
+                <input disabled asp-for="Location.Name" class="form-control" />
+            </div>
+                <input id="loc.long"hidden asp-for="Location.Longitude" value="@Model.Location.Longitude"/>
+                <input id="loc.lat" hidden  asp-for="Location.Latitude" value="@Model.Location.Latitude" />
+                <input id="loc.zoom" hidden asp-for="Location.Zoom" value="@Model.Location.Zoom" />
+            <div class="form-group">
+                <label asp-for="Location.GenderGroup" class="control-label"></label>
+                <br />
+                <select disabled asp-for="Location.GenderGroup">
+                    <option value="@SD.MaleGroup">@SD.MaleGroup</option>
+                    <option value="@SD.FemaleGroup">@SD.FemaleGroup</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Location.Description" class="control-label"></label>
+                <textarea disabled asp-for="Location.Description" class="form-control"></textarea>
+            </div>
+            <br />
+        </form>
+    </div>
+    <div class="col-md-8">
+        <partial name="_GoogleMapsPartial" />
+    </div>
+</div>
+<div class="row">
+    <h3>Students Assigned to Location</h3>
+    <div class="container-fluid my-2">
+	<table id="DT_load" class="table table-bordered table-striped" style="width:100%">
+			<thead>
+				<tr>
+					<th>
+						Name
+					</th>
+					<th>
+						Matric Number
+					</th>
+					<th>
+						Email
+					</th>
+					<th>
+					</th>
+				</tr>
+			</thead>
+	</table>
+</div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/js/admin.js"></script>
+    <script type="module" src="~/js/googlemap.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4iKYEyagl6dZ7S8tfVFeD9HNAQoDVCGs&callback=initMap" defer></script>
+}

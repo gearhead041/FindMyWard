@@ -1,0 +1,31 @@
+﻿@page
+@model FindMyWard.Web.Pages.Student.WardModel.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h4>Ward</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <input hidden asp-for="WardInfo.Id" />
+            <div class="form-group">
+                <label asp-for="WardInfo.Email" class="control-label"></label>
+                <input disabled asp-for="WardInfo.Email" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="WardInfo.PhoneNumber" class="control-label"></label>
+                <input  disabled asp-for="WardInfo.PhoneNumber" class="form-control" />
+            </div>
+           <button type="submit" class="btn btn-primary">Delete</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

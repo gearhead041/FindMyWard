@@ -1,0 +1,78 @@
+﻿@page
+@using System.Security.Claims
+@using FindMyWard.Utility;
+@model FindMyWard.Web.Pages.Student.IndexModel
+@{
+    var claimsIdentity = (ClaimsIdentity)User.Identity;
+    var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+}
+<h2>Welcome @User.Identity?.Name! </h2>
+@if(Model.StudentInfo != null)
+{   <div class="row">
+        <div class="col-md-4">
+	         <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    @if(Model.StudentInfo.Location != null){
+                        <input id="loc.long"hidden asp-for="StudentInfo.Location.Longitude" value="@Model.StudentInfo.Location.Longitude"/>
+                        <input id="loc.lat" hidden  asp-for="StudentInfo.Location.Latitude" value="@Model.StudentInfo.Location.Latitude" />
+                        <input id="loc.zoom" hidden asp-for="StudentInfo.Location.Zoom" value="@Model.StudentInfo.Location.Zoom" />
+                    }
+                    <input hidden asp-for="StudentInfo.Id" />
+                    <div class="form-group">
+                        <label asp-for="StudentInfo.MatricNumber" class="control-label"></label>
+                        <input disabled asp-for="StudentInfo.MatricNumber" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label  disabled asp-for="StudentInfo.Name" class="control-label"></label>
+                        <input disabled asp-for="StudentInfo.Name" class="form-control" />
+                    </div>
+                    @if(Model.StudentInfo.Location != null){
+                        <div class="form-group">
+                            <label asp-for="StudentInfo.Location" class="control-label"></label>
+                            <input disabled asp-for="StudentInfo.Location.Name" class="form-control" />
+                        </div>
+                    }
+                    <div class="form-group">
+                        <a asp-page="InfoModel/Edit" class="btn btn-primary my-2" asp-route-id="@Model.StudentInfo.Id">
+                            Edit</a>
+                    </div>
+            </form>
+        </div>
+        <div class="col-md-8">
+            <partial name="_GoogleMapsPartial"/>
+        </div>
+    </div>
+    <h3>These are the contacts to be notified</h3>
+    @if(Model.StudentInfo.Wards != null)
+    {
+        @foreach (var item in Model.StudentInfo.Wards)
+        {
+            <div class="form-group pt-2">
+                <label asp-for="@item.PhoneNumber" class="control-label"></label>
+                <input  disabled asp-for="@item.PhoneNumber" class="form-control" />
+                <label asp-for="@item.Email" class="control-label"></label>
+                <input  disabled asp-for="@item.Email" class="form-control" />
+            </div>
+            <a class="btn btn-primary" asp-page="WardModel/Edit" asp-route-id="@item.Id">Edit</a>
+            <a class="btn btn-primary" asp-page="WardModel/Delete" asp-route-id="@item.Id">Delete</a>
+        }
+        <a class="btn btn-primary" asp-page="WardModel/Create">Add a Ward</a>
+    }
+    else
+    {
+        
+        <p>Add a Ward for us to Contact for you with your location details</p>
+        <a class="btn btn-primary" asp-page="WardModel/Create">Add a Ward</a>
+    }
+}
+else
+{
+    <p>It looks like you've not registered for our service click here to sign up!</p>
+	<a asp-page="InfoModel/Create" asp-route-id="@claim.Value" class="btn btn-primary">Register</a>
+}
+
+@section Scripts{
+    <script src="~/js/admin_location_detail.js"></script>
+    <script type="module" src="~/js/googlemap.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4iKYEyagl6dZ7S8tfVFeD9HNAQoDVCGs&callback=initMap" defer></script>
+}

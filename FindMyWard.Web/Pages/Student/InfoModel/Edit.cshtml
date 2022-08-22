@@ -1,0 +1,42 @@
+﻿@page
+@model FindMyWard.Web.Pages.Student.InfoModels.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>StudentInfo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="StudentInfo.Id" />
+            <input type="hidden" asp-for="StudentInfo.UserId" />
+            <div class="form-group">
+                <label asp-for="StudentInfo.MatricNumber" class="control-label"></label>
+                <input asp-for="StudentInfo.MatricNumber" class="form-control" />
+                <span asp-validation-for="StudentInfo.MatricNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StudentInfo.Name" class="control-label"></label>
+                <input asp-for="StudentInfo.Name" class="form-control" />
+                <span asp-validation-for="StudentInfo.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StudentInfo.Location" class="control-label"></label>
+                <input asp-for="StudentInfo.Location" class="form-control" />
+                <span asp-validation-for="StudentInfo.Location" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,31 @@
+﻿@page
+@model FindMyWard.Web.Pages.Admin.Locations.IndexModel
+@using FindMyWard.Utility;
+<div class="row">
+<h3>Available Locations</h3>
+</div>
+<div class="justify-content-lg-end">
+	<a class="btn btn-primary my-2" asp-page="Create">Add Location</a>
+</div>
+<div class="container-fluid">
+	<table id="DT_load" class="table table-bordered table-striped" style="width:100%">
+			<thead>
+				<tr>
+					<th>
+						Name
+					</th>
+					<th>
+						Gender Group
+					</th>
+					<th>
+						Number of Students Assigned here
+					</th>
+					<th>
+					</th>
+				</tr>
+			</thead>
+	</table>
+</div>
+@section Scripts {
+	<script src="~/js/admin_locations.js"></script>   
+}

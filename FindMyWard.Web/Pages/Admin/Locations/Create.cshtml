@@ -1,0 +1,51 @@
+﻿@page
+@model FindMyWard.Web.Pages.Admin.Locations.CreateModel
+@using FindMyWard.Utility;
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <legend>Create New Location</legend>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="Location.Name" class="control-label"></label>
+                <input asp-for="Location.Name" class="form-control" />
+                <span asp-validation-for="Location.Name" class="text-danger"></span>
+            </div>
+                <input id="loc.long"hidden asp-for="Location.Longitude" value=""/>
+                <input id="loc.lat" hidden  asp-for="Location.Latitude" value="" />
+                <input id="loc.zoom" hidden asp-for="Location.Zoom" value="" />
+
+            <div class="form-group">
+                <label asp-for="Location.GenderGroup" class="control-label"></label>
+                <br />
+                <select asp-for="Location.GenderGroup">
+                    <option value="@SD.MaleGroup">@SD.MaleGroup</option>
+                    <option value="@SD.FemaleGroup">@SD.FemaleGroup</option>
+                </select>
+                <span asp-validation-for="Location.GenderGroup" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Location.Description" class="control-label"></label>
+                <textarea asp-for="Location.Description" class="form-control"></textarea>
+                <span asp-validation-for="Location.Description" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+    <div class="col-md-8">
+        @*//TODO Map Stuff here*@
+        <h3>Click to select a Location on Campus</h3>
+        <partial name="_GoogleMapsPartial" />
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script type="module" src="~/js/googlemap.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4iKYEyagl6dZ7S8tfVFeD9HNAQoDVCGs&callback=initMap" defer>
+        </script>
+}

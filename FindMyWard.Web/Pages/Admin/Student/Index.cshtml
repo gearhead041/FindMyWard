@@ -1,0 +1,67 @@
+﻿@page
+@using System.Security.Claims
+@using FindMyWard.Utility;
+@model FindMyWard.Web.Pages.Admin.Student.IndexModel
+@{
+    var claimsIdentity = (ClaimsIdentity)User.Identity;
+    var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+}
+<div class="row">
+    <form method="post">
+        <div class="row my-4">
+            <div class="col-md-4">
+                <legend>Student Information<br />
+                @Model.StudentInfo.User.NormalizedUserName
+                </legend>
+                <fieldset>
+                    <input type="hidden" asp-for="StudentInfo.Id" />
+                    <div class="form-group">
+                        <label asp-for="StudentInfo.MatricNumber" class="control-label"></label>
+                        <input disabled asp-for="StudentInfo.MatricNumber" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label  disabled asp-for="StudentInfo.Name" class="control-label"></label>
+                        <input disabled asp-for="StudentInfo.Name" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="StudentInfo.Location.Name" class="control-label"></label>
+                        <input disabled asp-for="StudentInfo.Location.Name" class="form-control" />
+                    </div>
+                </fieldset>
+            </div>
+            <div class="col-md-8">
+                <fieldset>
+                    @if(Model.StudentInfo.Wards != null)
+                    {
+                        <div class="form-group">
+                            <legend>These are the contacts to be notified:</legend>
+                            @foreach (var item in Model.StudentInfo.Wards)
+                            {
+                                <div class="form-group pt-2">
+                                    <label asp-for="@item.PhoneNumber" class="control-label"></label>
+                                    <input  disabled asp-for="@item.PhoneNumber" class="form-control" />
+                                    <label asp-for="@item.Email" class="control-label"></label>
+                                    <input  disabled asp-for="@item.Email" class="form-control" />
+                                </div>
+                            }
+                        </div>
+                    }
+                </fieldset>
+            </div>
+        </div>
+        <div class="row">
+            <fieldset>
+                <div class="form-group">
+                    <label asp-for="Notification.Subject" class="control-label"></label>
+                    <input asp-for="Notification.Subject" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Notification.Message" class="control-label"></label>
+                    <textarea asp-for="Notification.Message" class="form-control" placeholder="Write message for specific student here. use '@SD.StudentTempName' to specify ward name."></textarea>
+                </div>
+                <input type="submit" class="btn btn-primary my-2" value="Send Notification"/>
+            </fieldset>
+        </div>
+    </form>
+</div>
+   

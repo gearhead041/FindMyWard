@@ -1,0 +1,44 @@
+﻿@page
+@model FindMyWard.Web.Pages.Student.InfoModels.CreateModel
+@using FindMyWard.Utility
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>StudentInfo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="invalid-feedback"></div>
+            
+            <div class="form-group">
+                <label asp-for="StudentInfo.MatricNumber" class="control-label"></label>
+                <input asp-for="StudentInfo.MatricNumber" class="form-control" />
+                <span asp-validation-for="StudentInfo.MatricNumber" class="invalid-feedback"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StudentInfo.Name" class="control-label"></label>
+                <input asp-for="StudentInfo.Name" class="form-control" />
+                <span asp-validation-for="StudentInfo.Name" class="invalid-feedback"></span>
+            </div>
+            <div class="form-group my-2">
+                <label asp-for="StudentInfo.Gender" class="control-label"></label>
+                 <select asp-for="StudentInfo.Gender">
+                    <option value="@SD.MaleGroup">@SD.MaleGroup</option>
+                    <option value="@SD.FemaleGroup">@SD.FemaleGroup</option>
+                </select>
+                <span asp-validation-for="StudentInfo.Gender" class="invalid-feedback"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary my-2" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

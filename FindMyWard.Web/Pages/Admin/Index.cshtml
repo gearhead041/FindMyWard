@@ -1,0 +1,47 @@
+﻿@page
+@using FindMyWard.Utility
+@model FindMyWard.Web.Pages.Admin.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Student List</h1>
+<br />
+<form method="post">
+	<fieldset>
+		<div class="form-group row">
+			<label asp-for="@Model.Notification.Subject"></label>
+			<input asp-for="@Model.Notification.Subject"  />
+		</div>
+		<div class="form-group row">
+			<label asp-for="@Model.Notification.Message"></label>
+			<textarea  class="form-control" type="text" asp-for="@Model.Notification.Message" placeholder="write your message to send to all students here. To include the  name for each student use '@SD.StudentTempName' where you want the name to appear." ></textarea>
+		</div>
+	</fieldset>
+	<button type="submit" class="btn btn-primary my-2" asp-page-handler="NotifyAll">Send Notification To All</button>
+</form>
+<hr />
+<div class="container-fluid">
+	<table id="DT_load" class="table table-bordered table-striped" style="width:100%">
+			<thead>
+				<tr>
+					<th>
+						Name
+					</th>
+					<th>
+						Matric Number
+					</th>
+					<th>
+						Email
+					</th>
+					<th>
+					</th>
+				</tr>
+			</thead>
+	</table>
+</div>
+<a class="btn btn-primary" asp-page="Locations/Index">Manage Locations</a>
+	@section Scripts{
+		<script src="~/js/admin.js"></script>
+	}

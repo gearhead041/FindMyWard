@@ -1,0 +1,206 @@
+Connected to smtp://smtp-mail.outlook.com:587/?starttls=always
+S: 220 CT2P275CA0127.outlook.office365.com Microsoft ESMTP MAIL Service ready at Wed, 3 Aug 2022 18:10:37 +0000
+C: EHLO BAT-63
+S: 250-CT2P275CA0127.outlook.office365.com Hello [197.211.53.29]
+S: 250-SIZE 157286400
+S: 250-PIPELINING
+S: 250-DSN
+S: 250-ENHANCEDSTATUSCODES
+S: 250-STARTTLS
+S: 250-8BITMIME
+S: 250-BINARYMIME
+S: 250-CHUNKING
+S: 250 SMTPUTF8
+C: STARTTLS
+S: 220 2.0.0 SMTP server ready
+C: EHLO BAT-63
+S: 250-CT2P275CA0127.outlook.office365.com Hello [197.211.53.29]
+S: 250-SIZE 157286400
+S: 250-PIPELINING
+S: 250-DSN
+S: 250-ENHANCEDSTATUSCODES
+S: 250-AUTH LOGIN XOAUTH2
+S: 250-8BITMIME
+S: 250-BINARYMIME
+S: 250-CHUNKING
+S: 250 SMTPUTF8
+C: AUTH LOGIN
+S: 334 VXNlcm5hbWU6
+C: ********
+S: 334 UGFzc3dvcmQ6
+C: ********
+S: 235 2.7.0 Authentication successful
+C: MAIL FROM:<favouradetoun@outlook.com> SIZE=266
+C: RCPT TO:<favouradetoun@gmail.com> ORCPT=rfc822;favouradetoun@gmail.com
+S: 250 2.1.0 Sender OK
+S: 250 2.1.5 Recipient OK
+C: DATA
+S: 354 Start mail input; end with <CRLF>.<CRLF>
+C: From: Service Account <favouradetoun@outlook.com>
+C: Date: Wed, 03 Aug 2022 19:10:37 +0100
+C: Subject: Testing
+C: Message-Id: <78U3KL7XIHU4.20EK4U44WZYQ2@bat-63>
+C: To: First Last <favouradetoun@gmail.com>
+C: MIME-Version: 1.0
+C: Content-Type: text/html; charset=utf-8
+C: 
+C: Halp
+C: .
+S: 250 2.0.0 OK <AM0PR05MB485095FBC3FA81B76023C084A59C9@AM0PR05MB4850.eurprd05.prod.outlook.com> [Hostname=AM0PR05MB4850.eurprd05.prod.outlook.com]
+C: QUIT
+S: 221 2.0.0 Service closing transmission channel
+Connected to smtp://smtp-mail.outlook.com:587/?starttls=always
+S: 220 CTXP275CA0043.outlook.office365.com Microsoft ESMTP MAIL Service ready at Sat, 6 Aug 2022 10:22:20 +0000
+C: EHLO BAT-63
+S: 250-CTXP275CA0043.outlook.office365.com Hello [197.211.53.16]
+S: 250-SIZE 157286400
+S: 250-PIPELINING
+S: 250-DSN
+S: 250-ENHANCEDSTATUSCODES
+S: 250-STARTTLS
+S: 250-8BITMIME
+S: 250-BINARYMIME
+S: 250-CHUNKING
+S: 250 SMTPUTF8
+C: STARTTLS
+S: 220 2.0.0 SMTP server ready
+C: EHLO BAT-63
+S: 250-CTXP275CA0043.outlook.office365.com Hello [197.211.53.16]
+S: 250-SIZE 157286400
+S: 250-PIPELINING
+S: 250-DSN
+S: 250-ENHANCEDSTATUSCODES
+S: 250-AUTH LOGIN XOAUTH2
+S: 250-8BITMIME
+S: 250-BINARYMIME
+S: 250-CHUNKING
+S: 250 SMTPUTF8
+C: AUTH LOGIN
+S: 334 VXNlcm5hbWU6
+C: ********
+S: 334 UGFzc3dvcmQ6
+C: ********
+S: 235 2.7.0 Authentication successful
+C: MAIL FROM:<favouradetoun@outlook.com> SIZE=806
+C: RCPT TO:<admin@findmyward.com> ORCPT=rfc822;admin@findmyward.com
+S: 250 2.1.0 Sender OK
+S: 250 2.1.5 Recipient OK
+C: DATA
+S: 354 Start mail input; end with <CRLF>.<CRLF>
+C: From: Service Account <favouradetoun@outlook.com>
+C: Date: Sat, 06 Aug 2022 11:22:19 +0100
+C: Subject: Confirm your email
+C: Message-Id: <7Q0IN9PQJHU4.53O8MHKCZFV92@bat-63>
+C: To: First Last <admin@findmyward.com>
+C: MIME-Version: 1.0
+C: Content-Type: text/html; charset=utf-8
+C: 
+C: Please confirm your account by <a href='https://localhost:7132/Identity/Account/ConfirmEmail?userId=70ae4358-e6b8-4c92-bd10-706d0098f572&amp;code=Q2ZESjhOYms1Z2o3S2JoSHQvNzdJRGQxeWxCbzE5WVN2OEh6SzF1T25UK1ZFaDhmMlZ3YUxhK2t0VFBHRlllS0R4cFdCeE1RL2NqenhjbndjQW9LYm9lZnYvaS9BN282T2RxV3NMUU5KekJqampBTElMdkJBakxYYVppanUvZnpYRXByYjBqNWRaT05oRThVbDNTL2xjMk1LcXRsSXE1VE5MQ2JkMlNVRndLTzlpSnZ4K1NUamdLVmlHejJ6bGJyTWVrNUc4cG16bzlMOENZMy92NzBWL0VPUWZRNWJDL1RITHlmLzJhT3lIZDh6d0JCcmlhdGdJQ2VoRHVPT3FocHFGYXFudz09&amp;returnUrl=%2F'>clicking here</a>.
+C: .
+S: 250 2.0.0 OK <AM0PR05MB48507AC4ED063216979A25A5A5619@AM0PR05MB4850.eurprd05.prod.outlook.com> [Hostname=AM0PR05MB4850.eurprd05.prod.outlook.com]
+C: QUIT
+S: 221 2.0.0 Service closing transmission channel
+Connected to smtp://in.mailjet.com:587/?starttls=always
+S: 220 in.mailjet.com ESMTP Mailjet
+C: EHLO BAT-63
+S: 250-smtpin.mailjet.com
+S: 250-PIPELINING
+S: 250-SIZE 15728640
+S: 250-VRFY
+S: 250-ETRN
+S: 250-STARTTLS
+S: 250-AUTH PLAIN LOGIN DIGEST-MD5 CRAM-MD5
+S: 250-AUTH=PLAIN LOGIN DIGEST-MD5 CRAM-MD5
+S: 250-ENHANCEDSTATUSCODES
+S: 250-8BITMIME
+S: 250 SMTPUTF8
+C: STARTTLS
+S: 220 2.0.0 Ready to start TLS
+C: EHLO BAT-63
+S: 250-smtpin.mailjet.com
+S: 250-PIPELINING
+S: 250-SIZE 15728640
+S: 250-VRFY
+S: 250-ETRN
+S: 250-AUTH PLAIN LOGIN DIGEST-MD5 CRAM-MD5
+S: 250-AUTH=PLAIN LOGIN DIGEST-MD5 CRAM-MD5
+S: 250-ENHANCEDSTATUSCODES
+S: 250-8BITMIME
+S: 250 SMTPUTF8
+C: AUTH DIGEST-MD5
+S: 334 cmVhbG09IiIsbm9uY2U9InR2WGxpbE1YQkRCb0xRc0pJQjRCTVE9PSIscW9wPSJhdXRoIixjaGFyc2V0PSJ1dGYtOCIsYWxnb3JpdGhtPSJtZDUtc2VzcyI=
+C: ********
+S: 334 cnNwYXV0aD1lYjQxMzFiNTI3YjBlZmU5MWMzYzM4NGI1YjA0MGU3Yg==
+C: 
+S: 235 2.7.0 Authentication successful
+C: MAIL FROM:<favouradetoun@gmail.com> SIZE=272
+C: RCPT TO:<favouradetoun@gmail.com>
+S: 250 2.1.0 Ok
+S: 250 2.1.5 Ok
+C: DATA
+S: 354 End data with <CR><LF>.<CR><LF>
+C: From: Service Account <favouradetoun@gmail.com>
+C: Date: Fri, 19 Aug 2022 15:55:26 +0100
+C: Subject: Testing MailJet
+C: Message-Id: <9RQ2JG4SNHU4.CXKR6203ZGBH3@bat-63>
+C: To: First Last <favouradetoun@gmail.com>
+C: MIME-Version: 1.0
+C: Content-Type: text/html; charset=utf-8
+C: 
+C: Halp
+C: .
+S: 250 OK queued as eccc2b7e-73f3-48fb-bf0d-b43c35d93385
+C: QUIT
+S: 221 2.0.0 Bye
+Connected to smtp://in.mailjet.com:587/?starttls=always
+S: 220 in.mailjet.com ESMTP Mailjet
+C: EHLO BAT-63
+S: 250-smtpin.mailjet.com
+S: 250-PIPELINING
+S: 250-SIZE 15728640
+S: 250-VRFY
+S: 250-ETRN
+S: 250-STARTTLS
+S: 250-AUTH PLAIN LOGIN DIGEST-MD5 CRAM-MD5
+S: 250-AUTH=PLAIN LOGIN DIGEST-MD5 CRAM-MD5
+S: 250-ENHANCEDSTATUSCODES
+S: 250-8BITMIME
+S: 250 SMTPUTF8
+C: STARTTLS
+S: 220 2.0.0 Ready to start TLS
+C: EHLO BAT-63
+S: 250-smtpin.mailjet.com
+S: 250-PIPELINING
+S: 250-SIZE 15728640
+S: 250-VRFY
+S: 250-ETRN
+S: 250-AUTH PLAIN LOGIN DIGEST-MD5 CRAM-MD5
+S: 250-AUTH=PLAIN LOGIN DIGEST-MD5 CRAM-MD5
+S: 250-ENHANCEDSTATUSCODES
+S: 250-8BITMIME
+S: 250 SMTPUTF8
+C: AUTH DIGEST-MD5
+S: 334 cmVhbG09IiIsbm9uY2U9IlM5SEs1UVpNRUoxcThmYUhhOC84c2c9PSIscW9wPSJhdXRoIixjaGFyc2V0PSJ1dGYtOCIsYWxnb3JpdGhtPSJtZDUtc2VzcyI=
+C: ********
+S: 334 cnNwYXV0aD1kYzBjNTNhZDg4ZGZiZmZmZWUxMjJjNTcwNWI0NjMyMA==
+C: 
+S: 235 2.7.0 Authentication successful
+C: MAIL FROM:<favouradetoun@gmail.com> SIZE=279
+C: RCPT TO:<davidbolu6@gmail.com>
+S: 250 2.1.0 Ok
+S: 250 2.1.5 Ok
+C: DATA
+S: 354 End data with <CR><LF>.<CR><LF>
+C: From: Service Account <favouradetoun@gmail.com>
+C: Date: Fri, 19 Aug 2022 16:06:10 +0100
+C: Subject: Testing MailJet
+C: Message-Id: <O5MM1F7SNHU4.3Y0U8092G2X22@bat-63>
+C: To: First Last <davidbolu6@gmail.com>
+C: MIME-Version: 1.0
+C: Content-Type: text/html; charset=utf-8
+C: 
+C: Hello Main Man
+C: .
+S: 250 OK queued as d050b750-9a2b-40fd-8c59-713690de3fdb
+C: QUIT
+S: 221 2.0.0 Bye
