@@ -12,7 +12,8 @@ public static  class SD
     public const string StudentTempName = "ward_name";
 
     //HACK preferably store in database
-    public const string AdminMail = "favouradetoun@outlook.com";
+    public const string AdminMail = "";
+    public const string AdminPassword = "";
     public const string GmailSmtp = "";
     public const string MicrosoftSmtp = "smtp-mail.outlook.com";
     public const string MailJetSmtp = "in.mailjet.com";

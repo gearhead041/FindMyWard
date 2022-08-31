@@ -1,0 +1,12 @@
+"Twilio": {
+        "AccountSID": "41zSmpNwAfHBxUh8HTq7Fsj2TXsGboB8GFeM8ek7xhc8QmL1TJCmoam94f57niQhKqiajN7KMWmAng1cNnMghXPi5bN3xNk",
+        "AuthToken": "41zSmpNwAfHBxUh8HTq7Fsj2TXsGboB8GFeM8ek7xhc8QmL1TJCmoam94f57niQhKqiajN7KMWmAng1cNnMghXPi5bN3xNk"
+    },
+    "GoogleLogin": {
+        "ClientId": "111014261774-e3lj007u3dlavv75gfvul15749dpf52q.apps.googleusercontent.com",
+        "ClientSecret": "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"
+    },
+    "MailJet": {
+        "APiKey": "45c50b11c4a47fa600f072053627c0d0",
+        "SecretKey": "d26bb381f31a036bd6d99bfc1a96732b"
+    }

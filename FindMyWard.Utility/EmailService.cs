@@ -23,7 +23,7 @@ public class EmailService : IEmailSender
             await emailClient.ConnectAsync(SD.MicrosoftSmtp, 587, SecureSocketOptions.StartTls);
             //emailClient.AuthenticationMechanisms.Add("XOAUTH2");
             // TODO Make this more sensible use something that will be set when sending a message
-            emailClient.Authenticate(SD.AdminMail, "Jibolatolu37#");
+            emailClient.Authenticate(SD.AdminMail, SD.AdminPassword);
             await emailClient.SendAsync(emailToSend);
             emailClient.Disconnect(true);
         }

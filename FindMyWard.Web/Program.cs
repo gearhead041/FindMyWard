@@ -33,11 +33,12 @@ builder.Services.AddAuthentication()
 		microsoftOptions.AuthorizationEndpoint = "https://login.microsoftonline.com/72ca12ad-1c5b-400e-a56e-de2f46920121/oauth2/v2.0/authorize";
 		microsoftOptions.TokenEndpoint = "https://login.microsoftonline.com/72ca12ad-1c5b-400e-a56e-de2f46920121/oauth2/v2.0/token";
 	})
-	.AddGoogle( googleOptions =>
-    {
+	.AddGoogle(googleOptions =>
+	{
 		googleOptions.ClientId = builder.Configuration.GetSection("GoogleLogin")["ClientId"];
 		googleOptions.ClientSecret = builder.Configuration.GetSection("GoogleLogin")["ClientSecret"];
-    });
+	})
+ ;
 
 builder.Services.AddControllers().AddJsonOptions( x =>
 	x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
