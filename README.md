@@ -1,6 +1,6 @@
 # FindMyWard 🔎
 
-The concept is simply that of a meetup app. Honestly, if we had phones this won't be necessary at all
+The concept is simply that of a meetup app. Honestly, if we had phones this won't be necessary at all 👀
 
 ## Procedure
 1. Student signs in with school provided gmail account or microsoft account. (admin accounts a work in progress)
